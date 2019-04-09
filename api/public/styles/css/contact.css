@@ -47,15 +47,21 @@ ul {
 
 .contact-social {
   position: relative;
-  top: 18em;
+  top: 0;
   left: -5.5%;
 }
 
 .contact-social__list {
   position: inherit;
+  top: 80%;
   line-height: 2.8rem;
   font-family: "Noto Sans", sans-serif;
   font-weight: bold;
+}
+
+.contact-social__icons {
+  position: inherit;
+  top: 50%;
 }
 
 .contact-map__image {
@@ -117,7 +123,8 @@ ul {
   }
 
   .contact-social {
-    top: -8%;
+    position: relative;
+    top: -25%;
     left: 0;
   }
 
@@ -126,7 +133,7 @@ ul {
     padding: 0;
     margin: 0;
     height: 100%;
-    top: -9em;
+    top: -25%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -170,15 +177,19 @@ ul {
   }
 
   .contact-social {
-    position: absolute;
-    top: 8em;
+    position: inherit;
+    top: 3em;
     left: 55%;
   }
 
+  .contact-social__list {
+    position: inherit;
+    top: 90%;
+  }
+
   .contact-social__icons {
-    display: inline;
     position: relative;
-    top: -5em;
+    top: 0;
   }
 }
 
