@@ -1,18 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Courgette|Rancho|Noto+Sans");
 .item-container {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  top: 5%;
-  height: 90%;
+  top: 0;
+  min-height: 100vh;
   margin-bottom: 30px;
-  overflow: scroll;
-  scrollbar-width: none;
-}
-.item-container::-webkit-scrollbar {
-  display: none;
 }
 
 .item-view__image img {
@@ -34,12 +28,12 @@
   position: relative;
   width: 50%;
   line-height: 1.5rem;
-  height: 300px;
+  min-height: 100%;
   white-space: pre-wrap;
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
 }
 
