@@ -2,11 +2,17 @@ ul {
   list-style: none;
 }
 
+main {
+  min-height: 100%;
+}
+
 .contact-container {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-items: center;
   width: 100%;
+  min-height: 100%;
+  top: 5%;
 }
 
 .contact-hours {
@@ -43,12 +49,13 @@ ul {
   position: inherit;
   line-height: 2rem;
   font-weight: bold;
+  width: 100%;
 }
 
 .contact-social {
   position: relative;
-  top: 0;
-  left: -5.5%;
+  top: 20%;
+  left: -5%;
 }
 
 .contact-social__list {
@@ -61,7 +68,9 @@ ul {
 
 .contact-social__icons {
   position: inherit;
-  top: 50%;
+  display: flex;
+  width: 100%;
+  top: 80%;
 }
 
 .contact-map__image {
@@ -76,8 +85,6 @@ ul {
 .contact-icon {
   display: inline-block;
   position: relative;
-  top: 9em;
-  left: 0;
   height: 64px;
   width: 64px;
   margin: 0 5px;
@@ -95,45 +102,61 @@ ul {
   .contact-container {
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    overflow: scroll;
+    min-height: 100%;
+    top: 0;
   }
 
   .contact-hours {
     position: relative;
-    top: 5%;
+    top: 50px;
     left: unset;
   }
 
   .contact-map__image {
+    position: relative;
     width: 90%;
     height: unset;
     left: unset;
-    top: 5%;
+    top: 50px;
   }
 
   .contact-address {
-    top: 5%;
+    top: 30px;
     left: 15%;
   }
 
   .contact-phone {
-    top: -60px;
+    position: relative;
+    top: -50px;
     left: -25%;
   }
 
   .contact-social {
+    display: block;
     position: relative;
-    top: -25%;
+    height: 100%;
+    top: -10%;
     left: 0;
   }
 
-  .contact-social__icons {
+  .contact-social__list {
     position: relative;
-    padding: 0;
-    margin: 0;
-    height: 100%;
+    top: -30%;
+  }
+
+  .contact-social__icons {
+    display: flex;
+    position: relative;
     top: -25%;
+  }
+
+  .contact-icon {
+    position: relative;
+    top: 0;
+  }
+
+  .footer {
+    position: relative;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -151,13 +174,13 @@ ul {
 
   .contact-hours {
     position: absolute;
-    top: unset;
+    top: 5%;
     left: 5%;
   }
 
   .contact-address {
     position: absolute;
-    top: 7em;
+    top: 200%;
     left: 60%;
     font-size: 1.5rem;
   }
@@ -171,20 +194,20 @@ ul {
 
   .contact-phone {
     position: absolute;
-    top: unset;
+    top: 10%;
     left: 60%;
     width: 100%;
   }
 
   .contact-social {
     position: inherit;
-    top: 3em;
+    top: 6em;
     left: 55%;
   }
 
   .contact-social__list {
     position: inherit;
-    top: 90%;
+    top: 0;
   }
 
   .contact-social__icons {

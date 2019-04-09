@@ -190,6 +190,11 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+.footer {
+  position: relative;
+  bottom: -35px;
+}
+
 @media (max-width: 414px) {
   .banner__image {
     min-height: 200px;
