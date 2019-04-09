@@ -1,0 +1,35 @@
+<header class="header">
+    <nav class="nav-bar">
+        <a href="/" class="nav-bar__logo">Jimmy's Garage</a>
+        <ul class="nav-bar__list">
+            <li class="nav-bar__item"><a class="nav-bar__link <%= path === '/news' ? 'active' : '' %>" href="/news">News</a></li>
+            <li class="nav-bar__item"><a class="nav-bar__link <%= path === '/items' ? 'active' : '' %>" href="/items">Garage</a></li>
+            <li class="nav-bar__item"><a class="nav-bar__link <%= path === '/about' ? 'active' : '' %>" href="/about">About</a></li>
+            <li class="nav-bar__item"><a class="nav-bar__link <%= path === '/contact' ? 'active' : '' %>" href="/contact">Contact</a></li>
+            <% if (isAuth) { %>
+                <li class="nav-bar__item"><a class="nav-bar__link <%= path === '/admin/profile' ? 'active' : '' %> <%= path === '/admin/items' ? 'active' : '' %> <%= path === '/admin/add-item' ? 'active' : '' %> <%= path === '/admin/add-post' ? 'active' : '' %> <%= path === '/admin/edit-item' ? 'active' : '' %>" href="/admin/profile">Dashboard</a></li>
+            <% } %>
+        </ul>
+    </nav>
+
+    <nav class="res-menu">
+            <span class="slider">
+                <a class="slider__link slider__btn" href="#" onclick="openSlider()">
+                    <svg width="30" height="30">
+                        <path d="M0,5 30,5" stroke="#FFF" stroke-width="5"/>
+                        <path d="M0,14 30,14" stroke="#FFF" stroke-width="5"/>
+                        <path d="M0,23 30,23" stroke="#FFF" stroke-width="5"/>
+                    </svg>
+                </a>
+            </span>
+        </nav>
+
+        <div id="side-panel" class="side-panel">
+            <a href="#" class="btn-close" onclick="closeSlider()">&times;</a>
+            <a class="slider__link panel-link" href="/">Home</a>
+            <a class="slider__link panel-link" href="/news">News</a>
+            <a class="slider__link panel-link" href="/items">Garage</a>
+            <a class="slider__link panel-link" href="/about">About</a>
+            <a class="slider__link panel-link" href="/contact">Contact</a>
+        </div>
+</header>

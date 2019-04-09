@@ -1,0 +1,17 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/styles/css/details.css">
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+        <div class="item-container">
+            <h1 class="item-view__title"><%= item.name %></h1>
+            <div class="item-view__image">
+                <img src="/<%= item.imageUrl %>" alt="<%= item.name %>"/>
+            </div>
+            <div class="item-view__content">
+                <h2 class="item-view__price">$<%= item.price %></h2>
+            </div>
+            <p class="item-view__description"><%= item.description %></p>
+        </div>
+<%- include('includes/end.ejs') %>

@@ -1,0 +1,28 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/styles/css/admin.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="admin-container">
+    <%- include('../includes/admin-tabs.ejs') %>
+        <article class="item-container">
+            <div class="item-view__actions">
+                <a href="/admin/edit-item/<%= item._id %>?edit=true" class="card-item__btn btn btn-edit">Edit</a>
+                <input type="hidden" name="itemId" value="<%= item._id %>"/>
+                <button class="card-item__btn btn-delete" onclick="deleteItem(this)" type="button">Delete</button>
+            </div>
+            <div class="item-view__container">
+                <h1 class="item-view__title"><%= item.name %></h1>
+                <div class="item-view__image">
+                    <img src="/<%= item.imageUrl %>" alt="<%= item.name %>"/>
+                </div>
+                <div class="item-view__content">
+                    <h2 class="item-view__price">$<%= item.price %></h2>
+                </div>
+                <p class="item-view__description"><%= item.description %></p>
+            </div>
+        </article>
+    </div>
+    <script src="/scripts/deleteItem.js" type="text/javascript"></script>
+<%- include('../includes/end.ejs') %>

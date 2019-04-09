@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette|Rancho|Noto+Sans");
+.item-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 5%;
+  height: 90%;
+  margin-bottom: 30px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.item-container::-webkit-scrollbar {
+  display: none;
+}
+
+.item-view__image img {
+  border: 2px solid #000;
+  border-radius: 5px;
+  height: 250px;
+}
+
+.item-view__content {
+  display: flex;
+  justify-content: center;
+}
+
+.item-view__price {
+  margin: 10px 0;
+}
+
+.item-view__description {
+  position: relative;
+  width: 50%;
+  line-height: 1.5rem;
+  height: 300px;
+  white-space: pre-wrap;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 414px) {
+  .item-container {
+    position: relative;
+    justify-content: unset;
+    margin: 0;
+    width: 100%;
+    top: 2em;
+  }
+
+  .item-view__image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .item-view__image img {
+    height: unset;
+    width: 90%;
+  }
+
+  .item-view__description {
+    width: 90%;
+    height: unset;
+  }
+
+  .footer {
+    position: relative;
+    bottom: -50px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .item-container {
+    height: 90%;
+    justify-content: unset;
+  }
+
+  .item-view__image img {
+    position: relative;
+    height: unset;
+    width: 90%;
+    left: 5%;
+  }
+
+  .item-view__description {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=details.css.map */

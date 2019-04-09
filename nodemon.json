@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_ATLAS_PW": "devtesting",
+        "MONGO_ATLAS_USER": "devtester",
+        "JWT_KEY": "supersecretkey"
+    }
+}

@@ -1,0 +1,172 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.search-form {
+  position: absolute;
+  top: 8%;
+  right: 11%;
+  text-align: center;
+}
+
+.search-form input[name=search] {
+  border: 2px solid #000;
+  border-radius: 25px;
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  transition: all ease 0.2s;
+}
+.search-form input[name=search]:focus {
+  width: 300px;
+  outline: none;
+  border-color: #77e9e9;
+}
+
+.search-form input[type=submit] {
+  position: relative;
+  right: 67px;
+  padding: 0 10px;
+  height: 36px;
+  background: none;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 0 25px 25px 0;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+}
+.search-form input[type=submit]:hover {
+  color: #FFF;
+  background-color: #0f517c;
+  border: 2px solid #0f517c;
+  cursor: pointer;
+}
+.search-form input[type=submit]:active {
+  outline: none;
+}
+
+.items-container {
+  position: absolute;
+  top: 15%;
+  display: inline-block;
+  text-align: center;
+  height: 80%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.items-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card-item {
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+  width: 300px;
+  padding-bottom: 20px;
+  margin: 25px 50px;
+}
+
+.card-item__image img {
+  height: 150px;
+}
+
+.card-item__description {
+  padding: 0 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-item__actions {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.card-item__btn {
+  padding: 10px 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  color: #000;
+}
+.card-item__btn:hover {
+  background-color: #0f517c;
+  color: #FFF;
+}
+
+.card-item__link--default {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pagination {
+  position: relative;
+  margin: 30px 0;
+  bottom: 0;
+}
+
+.pagination a {
+  padding: 10px 20px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  color: #000;
+}
+.pagination a:hover, .pagination a.active {
+  background-color: #0f517c;
+  color: #FFF;
+}
+
+.no-items {
+  position: absolute;
+  top: 30%;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 414px) {
+  .items-container {
+    display: block;
+  }
+
+  .card-item {
+    display: block;
+    margin: 30px 0;
+  }
+
+  .search-form {
+    top: 7%;
+    right: unset;
+  }
+
+  .search-form input[name=search] {
+    width: 100px;
+  }
+
+  .search-form input[type=submit] {
+    display: none;
+  }
+}
+@media only screen and (min-height: 1024px) and (max-height: 1366px) {
+  .items-container {
+    top: 10%;
+    height: 85%;
+  }
+
+  .search-form {
+    top: 5%;
+  }
+}
+
+/*# sourceMappingURL=items.css.map */

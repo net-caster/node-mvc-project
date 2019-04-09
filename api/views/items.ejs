@@ -1,0 +1,47 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/styles/css/items.css">
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+        <main>
+        <form class="search-form" action="/items" method="GET">
+            <input type="text" name="search"/>
+            <input type="submit" value="Search"/>
+        </form>
+            <% if (prods.length > 0) { %>
+                <div class="items-container">
+                    <% for (let item of prods) { %>
+                        <article class="card-item">
+                            <header class="card-item__header">
+                                <a href="items/<%= item._id %>" class="card-item__link--default">
+                                    <h1 class="card-item__name">
+                                        <%= item.name %>
+                                    </h1>
+                                </a>
+                            </header>
+                            <div class="card-item__image">
+                                <a href="items/<%= item._id %>" class="card-item__link--default">
+                                    <img src="/<%= item.imageUrl %>" alt="<%= item.name %>"/>
+                                </a>
+                            </div>
+                            <div class="card-item__content">
+                                <h2 class="item__price">$
+                                    <%= item.price %>
+                                </h2>
+                                <p class="card-item__description">
+                                    <%= item.description %>
+                                </p>
+                            </div>
+                            <div class="card-item__actions">
+                                <a href="/items/<%= item._id %>" class="card-item__btn">Details</a>
+                            </div>
+                        </article>
+                    <% } %>
+                    <%- include('includes/pagination.ejs') %>
+                </div>
+            <% } else { %>
+                <h1 class="no-items">No Items Found!</h1>
+            <% } %>
+        </main>
+<%- include('includes/end.ejs') %>

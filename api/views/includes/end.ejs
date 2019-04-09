@@ -1,0 +1,12 @@
+<footer class="footer">
+    <span class="footer__copy">&copy; Jimmy's Garage 2019</span>
+    <% if (isAuth) { %>
+        <span class="footer__nav"><a class="footer__nav--link" href="/logout">Logout</a></span>
+    <% } else { %>
+        <span class="footer__nav"><a class="footer__nav--link" href="/login">Login</a></span>
+    <% } %>
+</footer>
+<script src="/scripts/resMenu.js" type="text/javascript"></script>
+</body>
+
+</html>

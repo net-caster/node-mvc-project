@@ -1,0 +1,9 @@
+<ul class="admin-tabs">
+    <li class="admin-tabs__item"><a class="admin-tabs__item--link profile-tab <%= path === '/admin/profile' ? 'active' : '' %>" href="/admin/profile">Profile</a></li>
+    <li class="admin-tabs__item"><a class="admin-tabs__item--link items-tab <%= path === '/admin/items' ? 'active' : '' %>" href="/admin/items">Items</a></li>
+    <li class="admin-tabs__item"><a class="admin-tabs__item--link add-item <%= path === '/admin/add-item' ? 'active' : '' %>" href="/admin/add-item">Add Item</a></li>
+    <li class="admin-tabs__item"><a class="admin-tabs__item--link add-post <%= path === '/admin/add-post' ? 'active' : '' %>" href="/admin/add-post">Add Post</a></li>
+    <% if (editing) { %>
+        <li class="admin-tabs__item"><a class="admin-tabs__item--link edit-item active" href="/admin/edit-item/<%= item._id %>?edit=true">Edit Item</a></li>
+    <% } %>
+</ul>

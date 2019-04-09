@@ -1,0 +1,52 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="styles/css/contact.css">
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="contact-container">
+        <div class="contact-hours">
+            <ul class="contact-hours__list">
+                <li class="contact-hours__item"><b>Opening Hours</b></li>
+                <br>
+                <li class="contact-hours__item">Monday: <b>9am - 5pm</b></li>
+                <li class="contact-hours__item">Tuesday: <b>9am - 5pm</b></li>
+                <li class="contact-hours__item">Wednesday: <b>9am - 5pm</b></li>
+                <li class="contact-hours__item">Thursday: <b>9am - 5pm</b></li>
+                <li class="contact-hours__item">Friday: <b>9am - 5pm</b></li>
+                <li class="contact-hours__item">Saturday: <b>10am - 2pm</b></li>
+                <li class="contact-hours__item">Sunday: <b>Closed</b></li>
+            </ul>
+        </div>
+        <img class="contact-map__image" src="images/contact_map.png">
+        <div class="contact-address">
+            <%# <img class="contact-icon contact-icon__map" src="images/icon_map.png"> %>
+            <ul class="contact-address__list">
+                <li class="contact-address__item contact-address__cityname">Salt Lake City</li>
+                <li class="contact-address__item contact-address__countyname">Taylersville</li>
+                <li class="contact-address__item contact-address__statename">Utah</li>
+                <li class="contact-address__item contact-address__zipcode">84118</li>
+                <li class="contact-address__item contact-address__countryname">USA</li>
+            </ul>
+        </div>
+        <div class="contact-phone">
+            <%# <img class="contact-icon contact-icon__phone" src="images/icon_phone.png"> %>
+            <ul class="contact-phone__list">
+                <li class="contact-phone__first">(+1) 801-555-2056</li>
+                <li class="contact-phone__second">(+1) 801-555-8260</li>
+            </ul>
+        </div>
+        <div class="contact-social">
+            <ul class="contact-social__list">
+                <li class="contact-social__email">contact@jimmysgarage.com</li>
+            </ul>
+            <div class="contact-social__icons">
+                <%# <img class="contact-icon contact-icon__email" src="images/icon_email.png"> %>
+                <img class="contact-icon contact-icon__facebook" src="images/icon_facebook.png">
+                <img class="contact-icon contact-icon__twitter" src="images/icon_twitter.png">
+                <img class="contact-icon contact-icon__skype" src="images/icon_skype.png">
+                <img class="contact-icon contact-icon__youtube" src="images/icon_youtube.png">
+            </div>
+        </div>
+    </div>
+<%- include('includes/end.ejs') %>

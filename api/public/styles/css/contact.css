@@ -1,0 +1,185 @@
+ul {
+  list-style: none;
+}
+
+.contact-container {
+  position: absolute;
+  display: flex;
+  justify-items: center;
+  width: 100%;
+}
+
+.contact-hours {
+  position: relative;
+  line-height: 1.5rem;
+  left: 5%;
+  top: 10em;
+  letter-spacing: 0.05rem;
+}
+
+.contact-address {
+  position: relative;
+  display: flex;
+  top: 4em;
+  left: 13%;
+}
+
+.contact-address__list {
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  line-height: 1.5rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+}
+
+.contact-phone {
+  position: relative;
+  top: 17em;
+  left: 5.5%;
+}
+
+.contact-phone__list {
+  position: inherit;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+.contact-social {
+  position: relative;
+  top: 18em;
+  left: -5.5%;
+}
+
+.contact-social__list {
+  position: inherit;
+  line-height: 2.8rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+}
+
+.contact-map__image {
+  position: relative;
+  top: 6em;
+  left: 10%;
+  width: 735px;
+  height: 453px;
+  border: 2px solid #000;
+}
+
+.contact-icon {
+  display: inline-block;
+  position: relative;
+  top: 9em;
+  left: 0;
+  height: 64px;
+  width: 64px;
+  margin: 0 5px;
+}
+.contact-icon:hover {
+  cursor: pointer;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 414px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .contact-hours {
+    position: relative;
+    top: 5%;
+    left: unset;
+  }
+
+  .contact-map__image {
+    width: 90%;
+    height: unset;
+    left: unset;
+    top: 5%;
+  }
+
+  .contact-address {
+    top: 5%;
+    left: 15%;
+  }
+
+  .contact-phone {
+    top: -60px;
+    left: -25%;
+  }
+
+  .contact-social {
+    top: -8%;
+    left: 0;
+  }
+
+  .contact-social__icons {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    top: -9em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .contact-container {
+    top: 5%;
+  }
+
+  .contact-map__image {
+    position: absolute;
+    height: unset;
+    width: 50%;
+    top: 18em;
+    left: 5%;
+  }
+
+  .contact-hours {
+    position: absolute;
+    top: unset;
+    left: 5%;
+  }
+
+  .contact-address {
+    position: absolute;
+    top: 7em;
+    left: 60%;
+    font-size: 1.5rem;
+  }
+
+  .contact-address__list {
+    position: inherit;
+    top: inherit;
+    line-height: 1.5rem;
+    font-weight: unset;
+  }
+
+  .contact-phone {
+    position: absolute;
+    top: unset;
+    left: 60%;
+    width: 100%;
+  }
+
+  .contact-social {
+    position: absolute;
+    top: 8em;
+    left: 55%;
+  }
+
+  .contact-social__icons {
+    display: inline;
+    position: relative;
+    top: -5em;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

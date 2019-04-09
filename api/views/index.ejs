@@ -1,0 +1,88 @@
+<%- include('includes/head.ejs') %>
+        <link href="styles/css/index.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container">
+        <div class="banner">
+            <div class="banner__image">
+                <div class="banner__alpha"></div>
+                <span class="banner__title">Welcome to Jimmy's Garage</span>
+                <span class="banner__description">We've got the best second-hand goods in Salt Lake City</span>
+            </div>
+        </div>
+        <main class="main-content">
+            <article class="main-content__intro">
+                <p>We are a small family-run business that sells high quality second-hand goods. If you're in need of cash we'll be happy to buy from you. 
+                <br>
+                If you like anything you see in our <a class="main-content__intro--link" href="items">garage</a> don't hesitate to <a class="main-content__intro--link" href="contact">contact us.</a></p>
+            </article>
+
+            <article class="main-content__items">
+            <h1 class="latest-items__heading">Latest Items</h1>
+            <% if (items.length > 0) { %>
+                <hr/>
+                    <div class="latest-items__container">
+                        <% for (let item of items) { %>
+                            <article class="card-item">
+                                <header class="card-item__header">
+                                    <a href="items/<%= item._id %>" class="card-item__link--default">
+                                        <h1 class="card-item__name">
+                                        <%= item.name %>
+                                        </h1>
+                                    </a>
+                                </header>
+                                <div class="card-item__image">
+                                    <a href="items/<%= item._id %>" class="card-item__link--default">
+                                        <img src="/<%= item.imageUrl %>" alt="<%= item.name %>"/>
+                                    </a>
+                                </div>
+                                <div class="card-item__content">
+                                    <h2 class="item__price">$
+                                        <%= item.price %>
+                                    </h2>
+                                    <p class="card-item__description">
+                                        <%= item.description %>
+                                    </p>
+                                </div>
+                                <div class="card-item__actions">
+                                    <a href="items/<%= item._id %>" class="card-item__btn">Details</a>
+                                </div>
+                            </article>
+                        <% } %>
+                    </div>
+            <% } else { %>
+                <h1 class="no-items">No Items Found!</h1>
+            <% } %>
+            </article>
+            <article class="main-content__news">
+                <% if (posts.length > 0) { %>
+                    <h1 class="posts__title">Latest News</h1>
+                    <hr/>
+                        <div class="posts-container">
+                            <% for (let post of posts) { %>
+                            <article class="post">
+                                <a href="news/<%= post._id %>" class="post__link--default">
+                                    <h1 class="post__title">
+                                        <%= post.title %>
+                                    </h1>
+                                </a>
+                                <div class="post__content">
+                                    <p class="post-content__p">
+                                        <%= post.content %>
+                                    </p>
+                                </div>
+                                <div class="post__actions">
+                                    <a href="/news/<%= post._id %>" class="post__btn"><b>Read More...</b></a>
+                                </div>
+                            </article>
+                        <% } %>
+                    </div>
+            <% } else { %>
+                <h1 class="no-posts">No Posts Found!</h1>
+            <% } %>
+            </article>
+        </main>
+    </div>
+<%- include('includes/end.ejs') %>

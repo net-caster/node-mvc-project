@@ -1,0 +1,90 @@
+.about-container {
+  display: inline-flex;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+}
+
+.about-section {
+  position: relative;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  top: 4em;
+  left: 20%;
+  line-height: 1.5rem;
+}
+
+.about__image {
+  position: relative;
+  height: 25%;
+  width: 25%;
+  left: 15%;
+  border: 2px solid #000;
+}
+
+.about-section__title {
+  text-align: center;
+}
+
+.about-section__text--link {
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 414px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    height: 85%;
+  }
+
+  .about__image {
+    width: 90%;
+    left: unset;
+    height: unset;
+  }
+
+  .about-section {
+    width: 90%;
+    left: unset;
+    top: 1em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 5%;
+  }
+
+  .about__image {
+    top: 1em;
+    left: unset;
+    width: unset;
+    height: 500px;
+  }
+
+  .about-section {
+    top: 4em;
+    width: 80%;
+    left: unset;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */
