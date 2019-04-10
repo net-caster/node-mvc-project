@@ -41,9 +41,14 @@
   .item-container {
     position: relative;
     justify-content: unset;
+    align-items: center;
     margin: 0;
     width: 100%;
     top: 2em;
+  }
+
+  .item-view__title {
+    text-align: center;
   }
 
   .item-view__image {
