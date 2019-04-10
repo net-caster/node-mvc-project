@@ -5,7 +5,6 @@ const cloudinary = require('cloudinary').v2;
 const User = require('../../models/user');
 const Item = require('../../models/item');
 const Post = require('../../models/post');
-const fileHelper = require('../../utils/file');
 
 const ITEMS_PER_PAGE = 6;
 
@@ -166,33 +165,6 @@ exports.postAddItem = async (req, res, next) => {
 	}
 };
 
-/* exports.postAddItem = async (req, res, next) => {
-	if (!req.file) {
-		const error = new Error('No image provided');
-		error.statusCode = 422;
-		throw error;
-	}
-
-	const item = new Item({
-		_id: new mongoose.Types.ObjectId(),
-		name: req.body.name,
-		price: req.body.price,
-		description: req.body.description,
-		imageUrl: req.file.path
-	});
-
-	try {
-		const result = await item.save();
-		console.log(result);
-		res.status(201).redirect('items');
-	} catch (err) {
-		console.log(err);
-		res.status(500).json({
-			error: err
-		});
-	}
-}; */
-
 exports.getUpdateItem = async (req, res, next) => {
 	const editMode = req.query.edit;
 	const itemId = req.params.itemId;
@@ -229,14 +201,21 @@ exports.postUpdateItem = async (req, res, next) => {
 		item.price = updatedPrice;
 		item.description = updatedDesc;
 		if (imageUrl) {
-			fileHelper.deleteFile(item.imageUrl);
-			item.imageUrl = imageUrl.path;
+			try {
+				await cloudinary.uploader.destroy(item.imageId);
+				const result = await cloudinary.uploader.upload(imageUrl.path);
+				item.imageId = result.public_id;
+				item.imageUrl = result.secure_url;
+			} catch (err) {
+				err.status = 500;
+				console.log(err);
+				throw err;
+			}
 		}
 		await item.save();
 		console.log(item);
 		return res.redirect('/admin/items/' + itemId);
 	} catch (err) {
-		err.status = 500;
 		console.log(err);
 		throw err;
 	}
@@ -250,7 +229,12 @@ exports.deleteItem = async (req, res, next) => {
 		if (!item) {
 			return new Error('Item not found');
 		}
-		fileHelper.deleteFile(item.imageUrl);
+		try {
+			await cloudinary.uploader.destroy(item.imageId);
+		} catch (err) {
+			console.log(err);
+			throw err;
+		}
 		await Item.deleteOne({
 			_id: itemId
 		});

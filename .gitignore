@@ -1,5 +1,6 @@
 node_modules
 text
+api/utils/file.js
 api/public/styles/scss
 api/public/styles/css/about.css.map
 api/public/styles/css/admin.css.map
