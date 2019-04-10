@@ -129,6 +129,13 @@ ul {
   margin: 25px 50px;
 }
 
+.card-item__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 5%;
+  white-space: nowrap;
+}
+
 .card-item__image img {
   height: 150px;
 }

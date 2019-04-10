@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette|Rancho|Noto+Sans");
 main {
   display: flex;
   justify-content: center;
@@ -42,7 +43,7 @@ a {
   font-weight: bold;
 }
 .search-form input[type=submit]:hover {
-  color: #FFF;
+  color: #fff;
   background-color: #0f517c;
   border: 2px solid #0f517c;
   cursor: pointer;
@@ -74,6 +75,13 @@ a {
   margin: 25px 50px;
 }
 
+.card-item__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 5%;
+  white-space: nowrap;
+}
+
 .card-item__image img {
   height: 150px;
 }
@@ -98,7 +106,7 @@ a {
 }
 .card-item__btn:hover {
   background-color: #0f517c;
-  color: #FFF;
+  color: #fff;
 }
 
 .card-item__link--default {
@@ -120,7 +128,7 @@ a {
 }
 .pagination a:hover, .pagination a.active {
   background-color: #0f517c;
-  color: #FFF;
+  color: #fff;
 }
 
 .no-items {
