@@ -11,3 +11,4 @@ api/public/styles/css/index.css.map
 api/public/styles/css/items.css.map
 api/public/styles/css/navigation.css.map
 api/public/styles/css/news.css.map
+nodemon.json

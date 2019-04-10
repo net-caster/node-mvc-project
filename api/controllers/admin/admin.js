@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const cloudinary = require('cloudinary').v2;
 
 const User = require('../../models/user');
 const Item = require('../../models/item');
@@ -135,6 +136,37 @@ exports.getAddItem = (req, res, next) => {
 };
 
 exports.postAddItem = async (req, res, next) => {
+	try {
+		if (!req.file) {
+			const error = new Error('No image provided');
+			error.statusCode = 422;
+			throw error;
+		}
+		const item = new Item({
+			_id: new mongoose.Types.ObjectId(),
+			name: req.body.name,
+			price: req.body.price,
+			description: req.body.description,
+			imageUrl: req.file.path
+		});
+		const image = await cloudinary.uploader.upload(item.imageUrl);
+		console.log('Image uploaded to Cloudinary!');
+		console.dir(image);
+		const { secure_url, public_id } = image;
+		item.imageUrl = secure_url;
+		item.imageId = public_id;
+		const result = await item.save();
+		console.log(result);
+		return res.status(201).redirect('items');
+	} catch (err) {
+		console.log(err);
+		res.status(500).json({
+			error: err
+		});
+	}
+};
+
+/* exports.postAddItem = async (req, res, next) => {
 	if (!req.file) {
 		const error = new Error('No image provided');
 		error.statusCode = 422;
@@ -159,7 +191,7 @@ exports.postAddItem = async (req, res, next) => {
 			error: err
 		});
 	}
-};
+}; */
 
 exports.getUpdateItem = async (req, res, next) => {
 	const editMode = req.query.edit;

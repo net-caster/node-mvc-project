@@ -9,11 +9,11 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const helmet = require('helmet');
 const compression = require('compression');
+const cloudinary = require('cloudinary');
 
 const itemsRoutes = require('./api/routes/items');
 const adminRoutes = require('./api/routes/admin/admin');
 const pagesRoutes = require('./api/routes/pages');
-// const orderRoutes = require('./api/routes/orders');
 
 app.set('view engine', 'ejs');
 app.set('views', 'api/views');
@@ -32,15 +32,15 @@ app.use(helmet());
 app.use(compression());
 
 const storage = multer.diskStorage({
-	destination: function(req, file, callback) {
+	/* 	destination: function(req, file, callback) {
 		callback(null, 'uploads');
-	},
+	}, */
 	filename: function(req, file, callback) {
 		callback(null, new Date().toISOString().replace(/:/g, '-') + file.originalname);
 	}
 });
 
-const fileFilter = (req, file, callback) => {
+const imageFilter = (req, file, callback) => {
 	if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png') {
 		callback(null, true);
 	} else {
@@ -53,7 +53,13 @@ const upload = multer({
 	limits: {
 		fileSize: 1024 * 1024 * 5
 	},
-	fileFilter: fileFilter
+	fileFilter: imageFilter
+});
+
+cloudinary.config({
+	cloud_name: 'netcaster',
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

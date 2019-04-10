@@ -2,6 +2,8 @@
     "env": {
         "MONGO_ATLAS_PW": "devtesting",
         "MONGO_ATLAS_USER": "devtester",
-        "JWT_KEY": "supersecretkey"
+        "JWT_KEY": "supersecretkey",
+        "CLOUDINARY_API_KEY": "931153345365722",
+        "CLOUDINARY_API_SECRET": "QGR3Svs2sWQgvISuhBQxSpUlrO0"
     }
 }
