@@ -28,8 +28,3 @@ and image preview before uploading,
 
 * created responsive public views for smart phones and responsive admin
 views for tablets
-
----
-
-**Although I created the endpoints with JSON responses initially, I had
-to switch to rendering views due to certain limitations on my end.*
