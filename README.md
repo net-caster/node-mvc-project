@@ -1,6 +1,6 @@
 # Jimmy's Garage
 
-### My first REST API project
+### My first MVC project
 
 I built this project to learn more about REST APIs and how they interact with the front-end.
 
